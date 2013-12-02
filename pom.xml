@@ -94,17 +94,17 @@
 						<container>
 							<dependencies>
 								<dependency>
+									<groupId>log4j</groupId>
+									<artifactId>log4j</artifactId>
+								</dependency>
+								
+								<dependency>
 									<groupId>com.h2database</groupId>
 									<artifactId>h2</artifactId>
 								</dependency>
 								<dependency>
 									<groupId>p6spy</groupId>
 									<artifactId>p6spy</artifactId>
-								</dependency>
-
-								<dependency>
-									<groupId>log4j</groupId>
-									<artifactId>log4j</artifactId>
 								</dependency>
 							</dependencies>
 						</container>
@@ -125,20 +125,20 @@
 									-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y</cargo.jvmargs> -->
 
 								<!-- just temporary, to prove things work at all with h2 -->
-								<cargo.datasource.datasource.h2>
+								<!-- <cargo.datasource.datasource.h2>
 									cargo.datasource.driver=org.h2.Driver|
 									cargo.datasource.url=jdbc:h2:mem:foo|
 									cargo.datasource.jndi=jdbc/h2|
 									cargo.datasource.username=sa|
-									cargo.datasource.password=
-								</cargo.datasource.datasource.h2>
+									cargo.datasource.password=sa
+								</cargo.datasource.datasource.h2> -->
 
 								<cargo.datasource.datasource.p6spy>
 									cargo.datasource.driver=com.p6spy.engine.spy.P6SpyDriver|
 									cargo.datasource.url=jdbc:p6spy:h2:mem:p6spy|
 									cargo.datasource.jndi=jdbc/p6spy|
 									cargo.datasource.username=sa|
-									cargo.datasource.password=
+									cargo.datasource.password=sa
 								</cargo.datasource.datasource.p6spy>
 
 								<!-- some free one -->
@@ -335,7 +335,7 @@
 							<container>
 								<containerId>jetty9x</containerId>
 								<zipUrlInstaller>
-									<url>http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.1.0.v20131115.zip&amp;r=1</url>
+									<url>http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/jetty/stable-9/dist/jetty-distribution-9.1.0.v20131115.zip</url>
 								</zipUrlInstaller>
 							</container>
 						</configuration>
@@ -352,9 +352,9 @@
 						<artifactId>cargo-maven2-plugin</artifactId>
 						<configuration>
 							<container>
-								<containerId>jetty9x</containerId>
+								<containerId>jetty8x</containerId>
 								<zipUrlInstaller>
-									<url>http://eclipse.org/downloads/download.php?file=/jetty/stable-8/dist/jetty-distribution-8.1.14.v20131031.zip&amp;r=1</url>
+									<url>http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/jetty/8.1.14.v20131031/dist/jetty-distribution-8.1.14.v20131031.zip</url>
 								</zipUrlInstaller>
 							</container>
 						</configuration>
@@ -371,9 +371,9 @@
 						<artifactId>cargo-maven2-plugin</artifactId>
 						<configuration>
 							<container>
-								<containerId>jetty9x</containerId>
+								<containerId>jetty7x</containerId>
 								<zipUrlInstaller>
-									<url>http://eclipse.org/downloads/download.php?file=/jetty/stable-7/dist/jetty-distribution-7.6.14.v20131031.zip&amp;r=1</url>
+									<url>http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/jetty/7.6.14.v20131031/dist/jetty-distribution-7.6.14.v20131031.zip</url>
 								</zipUrlInstaller>
 							</container>
 						</configuration>
@@ -507,7 +507,7 @@
 							<container>
 								<containerId>geronimo3x</containerId>
 								<zipUrlInstaller>
-									<url>http://www.apache.org/dyn/closer.cgi/geronimo/3.0.1/geronimo-tomcat7-minimal-3.0.1-bin.zip</url>
+									<url>http://mirror.netcologne.de/apache.org/geronimo/3.0.1/geronimo-tomcat7-minimal-3.0.1-bin.zip</url>
 								</zipUrlInstaller>
 							</container>
 						</configuration>
