@@ -152,7 +152,8 @@
 							<phase>pre-integration-test</phase>
 							<goals>
 								<goal>start</goal>
-								<goal>deploy</goal>
+								<!-- redeploy instead of deploy, to make glassfish happy -->
+								<goal>redeploy</goal>
 							</goals>
 						</execution>
 						<execution>
