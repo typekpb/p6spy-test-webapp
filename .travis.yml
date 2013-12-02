@@ -23,4 +23,4 @@ env:
     - AS=jonas-5.x
     - AS=geronimo-3.x
 
-script: "mvn clean test -P ${AS}"
+script: "mvn clean verify -P ${AS}"
